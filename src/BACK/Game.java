@@ -69,7 +69,7 @@ public class Game<boosted> {
 
         this.score = 0;
 
-        this.nombreVies = 1;
+        this.nombreVies = 3;
 
         this.niveauActuel = 1;
 
