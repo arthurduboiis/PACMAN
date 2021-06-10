@@ -641,6 +641,7 @@ public class Grille {
                 return 5000;
             }
             default -> {
+                System.out.println("ERREUR: nombre de points par type");
                 return 0;
             }
         }
@@ -705,6 +706,7 @@ public class Grille {
             }
 
             grilleJeu[18][10] = new ObjetDecors(typeToPop);
+            System.out.println("Fruit pop:" + typeToPop);
         }
     }
 

@@ -2,6 +2,8 @@
     -fx-background-image: url("../../../../src/RESSOURCES/IMAGES/menuPrincipal.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100%;
+    -fx-background-height: 720px;
+    -fx-background-width: 660px;
     -fx-background-position: center center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
 }
@@ -9,8 +11,8 @@
 
 
 #button {
-    -fx-pref-width: 250px;
-    -fx-pref-height: 30px;
+    -fx-max-width: 250px;
+    -fx-max-height: 30px;
     -fx-padding: 8 15 15 15;
     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
     -fx-background-radius: 8;
