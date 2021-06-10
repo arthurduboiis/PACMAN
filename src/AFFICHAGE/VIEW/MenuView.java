@@ -1,6 +1,7 @@
 package AFFICHAGE.VIEW;
 
 import BACK.CONTROLEUR.ControleBouton;
+import BACK.CONTROLEUR.ControleMenu;
 import BACK.Game;
 import BACK.PREDEF.Liens;
 import javafx.geometry.HPos;

@@ -39,8 +39,7 @@ public class ControleBouton implements EventHandler {
         commentJouerView = new CommentJouerView(this,game);
         jeuCompletView = new JeuCompletView(this,game);
         nameView = new NameView(this,game);
-        /*finView =  new FinView(game);
-        finView.setController(this);*/
+
 
         this.primaryStage = primaryStage;
         try {
@@ -139,7 +138,8 @@ public class ControleBouton implements EventHandler {
                         primaryStage.setScene(scene);
                         game.getTimeline().play();
                         audioMenu.pause();
-
+                        primaryStage.setResizable(false);
+                        primaryStage.sizeToScene();
 
                     }
                 }catch (IOException e){
