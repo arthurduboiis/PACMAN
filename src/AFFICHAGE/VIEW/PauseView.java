@@ -27,6 +27,9 @@ public class PauseView extends GridPane {
         retourMenu.setOnAction(controleBouton);
     }
 
+    /**
+     * initialise la grid
+     */
     public void initGrid() {
 
 
@@ -94,22 +97,42 @@ public class PauseView extends GridPane {
 
     }
 
+    /**
+     * renvoie le bouton retour menu
+     * @return Button
+     */
     public Button getRetourMenu() {
         return retourMenu;
     }
 
+    /**
+     * renvoie le Text nom
+     * @return Text
+     */
     public Text getTextNom() {
         return textNom;
     }
 
+    /**
+     * initialise le text nom
+     * @param textNom String
+     */
     public void setTextNom(String textNom) {
         this.textNom.setText(textNom);
     }
 
+    /**
+     * renvoie le Text record
+     * @return Text
+     */
     public Text getTextRecord() {
         return textRecord;
     }
 
+    /**
+     * initialise le text record
+     * @param textRecord String
+     */
     public void setTextRecord(String textRecord) {
         this.textRecord.setText(textRecord);
     }
