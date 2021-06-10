@@ -28,6 +28,7 @@ public class ControleBouton implements EventHandler {
     private boolean verif = false;
     //private FinView finView;
     private CommentJouerView commentJouerView;
+    private ControleMenu controleMenu;
 
     private NameView nameView;
 
@@ -35,7 +36,7 @@ public class ControleBouton implements EventHandler {
         this.game = game;
 
         menuView = new MenuView(this,game);
-
+        controleMenu = new ControleMenu(game,getMenuView());
         recordView = new RecordView(this,game);
         commentJouerView = new CommentJouerView(this,game);
         jeuCompletView = new JeuCompletView(this,game);
@@ -113,8 +114,10 @@ public class ControleBouton implements EventHandler {
 
                         else {
                             this.game = new Game();
+
                             this.jeuCompletView = new JeuCompletView(this,game);
                             jeuCompletView.setVueJeu(this.vueJeu);
+                            this.controleMenu = new ControleMenu(game, new MenuView(this,game));
                             scene = new Scene(jeuCompletView);
                         }
 

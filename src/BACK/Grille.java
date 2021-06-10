@@ -476,7 +476,7 @@ public class Grille {
                 if (game.isBoosted()){
                     game.setScore(game.getScore() + (200 * serie));
                     serie++;
-                    impact(PACMAN, prochaineCase);
+                    //impact(PACMAN, prochaineCase);
                     return true;
                 }else {
                     restart();

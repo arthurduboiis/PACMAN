@@ -21,7 +21,7 @@ public class Appli extends Application {
         Game game = new Game();
         ControleBouton controleBouton = new ControleBouton(stage,game);
         final Scene scene = new Scene(controleBouton.getMenuView());
-        new ControleMenu(game,controleBouton.getMenuView());
+        /*new ControleMenu(game,controleBouton.getMenuView());*/
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setTitle("Pacman");
         stage.setWidth(game.getWIDTH_FEN());

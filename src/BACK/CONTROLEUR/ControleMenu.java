@@ -32,6 +32,9 @@ public class ControleMenu implements EventHandler<KeyEvent> {
         this.menuView.setOnKey(this);
 
     }
+    public void setGame(Game game){
+        this.game = game;
+    }
 
     @Override
     public void handle(KeyEvent keyEvent) {
@@ -42,11 +45,13 @@ public class ControleMenu implements EventHandler<KeyEvent> {
             System.out.println("M");
 
             if (EE1){
+                System.out.println("je desactive");
                 EE1 = false;
-                game.setPacDonald(false);
+                this.game.setPacDonald(false);
             }else{
+                System.out.println("J'active");
                 EE1 = true;
-                game.setPacDonald(true);
+                this.game.setPacDonald(true);
             }
 
 
