@@ -94,7 +94,7 @@ public class Grille {
 
 
 
-            if (ch != '\n') {
+            if (ch != '\r') {
 
                 tab[x][y] = ch;
                 switch (ch) {
