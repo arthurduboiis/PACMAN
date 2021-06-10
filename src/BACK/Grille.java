@@ -214,6 +214,7 @@ public class Grille {
 
 
 
+
     public Objet contains(int x, int y){
 
         return grilleJeu[x][y];
