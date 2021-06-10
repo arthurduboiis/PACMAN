@@ -36,6 +36,10 @@ public class Grille {
 
     private Objet[] dernieresCasesSupprimees = {new Objet(typeObjet.VIDE), new Objet(typeObjet.VIDE), new Objet(typeObjet.VIDE),new Objet(typeObjet.VIDE), null};
 
+    /**
+     * initialisation grille
+     * @param game Game
+     */
     public Grille(Game game){
 
         this.game = game;
@@ -54,6 +58,10 @@ public class Grille {
         }
     }
 
+    /**
+     * renvoie la map
+     * @return String
+     */
     public String selectMap(){
         Random rd = new Random();
         int nb = 1 + rd.nextInt(2);
@@ -64,7 +72,10 @@ public class Grille {
 
     }
 
-
+    /**
+     * initialise la grille
+     * @throws IOException
+     */
     public void initGrille() throws IOException {
 
         char[][] tab = new char[22][22];
@@ -204,20 +215,31 @@ public class Grille {
 
     /////////////////// PREVIOUS FUNCTIONS //////////////////////
 
-
+    /**
+     * renvoie pac-man
+     * @return Objet
+     */
     public Objet getPacMan(){
 
         return this.PacMan;
     }
 
-
-
-
+    /**
+     * renvoie contains
+     * @param x int
+     * @param y int
+     * @return Objet
+     */
     public Objet contains(int x, int y){
 
         return grilleJeu[x][y];
     }
 
+    /**
+     * convertir direction
+     * @param dir Directions
+     * @return int[]
+     */
     public int[] convertDir(Directions dir) {
         switch (dir) {
 
@@ -240,6 +262,9 @@ public class Grille {
         return null;
     }
 
+    /**
+     * affiche objet mobile
+     */
     public void printObjetMob(){
 
         for (int i = 0; i < 22; i++) {
@@ -262,6 +287,10 @@ public class Grille {
 
     }
 
+    /**
+     * renvoie la direction
+     * @return Directions
+     */
     public Directions genDir(){
 
         Directions[] toReturn = new Directions[4];
@@ -289,7 +318,9 @@ public class Grille {
 
     }
 
-
+    /**
+     * erase Objet Mobiles
+     */
     public void eraseObjetMobiles(){
 
         for (int i = 0; i < 22; i++) {
@@ -320,9 +351,9 @@ public class Grille {
 
     }
 
-
-
-
+    /**
+     * restart
+     */
     public void restart(){
 
         try {
@@ -373,7 +404,11 @@ public class Grille {
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+    /**
+     * verifie si objet est un fruit
+     * @param Case Objet
+     * @return boolean
+     */
     public boolean estUnFruit(Objet Case){
         typeObjet type = Case.getType();
 
@@ -386,6 +421,11 @@ public class Grille {
 
     }
 
+    /**
+     * verifie si objet est un fantome
+     * @param Case Objet
+     * @return boolean
+     */
     public boolean estUnFantome(Objet Case){
         typeObjet type = Case.getType();
 
@@ -397,6 +437,11 @@ public class Grille {
         }
     }
 
+    /**
+     * impact pac-man et fantome
+     * @param pacMan Objet
+     * @param fantome Objet
+     */
     public void impact(Objet pacMan, Objet fantome){
         int[] cooPacMan = pacMan.getObjetMobile().getCoordonees();
         int[] cooFantome = fantome.getObjetMobile().getCoordonees();
@@ -430,6 +475,10 @@ public class Grille {
 
     }
 
+    /**
+     * initialisation fantome
+     * @param typeFantome typeObjet
+     */
     public void initFantome(typeObjet typeFantome){
         switch (typeFantome) {
             case FANTOME_ROSE-> {
@@ -451,6 +500,12 @@ public class Grille {
         }
     }
 
+    /**
+     * renvoie coorder checkTP
+     * @param coordon int[]
+     * @param aAjouter int[]
+     * @return int[]
+     */
     private int[] checkTP(int[] coordon, int[] aAjouter) {
         if (coordon[1] == 21){
             return new int[]{0,-20};
@@ -462,6 +517,12 @@ public class Grille {
 
     private int serie = 1;
 
+    /**
+     * verifie si deplacer pacman
+     * @param dir Direction
+     * @param PACMAN Objet
+     * @return boolean
+     */
     public boolean deplacerPacman(Directions dir, Objet PACMAN){
 
         int[] previousCoo = PACMAN.getObjetMobile().getCoordonees();
@@ -537,6 +598,12 @@ public class Grille {
         return false;
     }
 
+    /**
+     * verifie si deplacer fantome
+     * @param dir Directions
+     * @param Fantome Objet
+     * @return boolean
+     */
     public boolean deplacerFantome(Directions dir, Objet Fantome){
 
         int[] previousCoo = Fantome.getObjetMobile().getCoordonees();
@@ -605,7 +672,11 @@ public class Grille {
         return false;
     }
 
-
+    /**
+     * renvoie points par fruits
+     * @param objet Objet
+     * @return int
+     */
     public int getPointsByFruits(Objet objet){
 
         typeObjet typeFruit = objet.getType();
@@ -641,6 +712,9 @@ public class Grille {
 
     }
 
+    /**
+     * generation fruits
+     */
     public void genFruit(){
 
         int niveauActuel = game.getNiveauActuel();
@@ -706,76 +780,146 @@ public class Grille {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+    /**
+     * renvoie grille jeu
+     * @return Objet[]
+     */
     public Objet[][] getGrilleJeu() {
         return grilleJeu;
     }
 
-
+    /**
+     * initialise grille jeu
+     * @param grilleJeu
+     */
     public void setGrilleJeu(Objet[][] grilleJeu) {
         this.grilleJeu = grilleJeu;
     }
 
+    /**
+     * renvoie le nombre de bonbons
+     * @return int
+     */
     public int getNbBonbons() {
         return nbBonbons;
     }
 
+    /**
+     * initialise nombre de bonbons
+     * @param nbBonbons int
+     */
     public void setNbBonbons(int nbBonbons) {
         this.nbBonbons = nbBonbons;
     }
 
+    /**
+     * renvoie le nombre de bonbons manges
+     * @return int
+     */
     public int getNbBonbonsManges() {
         return nbBonbonsManges;
     }
 
+    /**
+     * initialise le nombre de bonbons manger
+     * @param nbBonbonsManges int
+     */
     public void setNbBonbonsManges(int nbBonbonsManges) {
         this.nbBonbonsManges = nbBonbonsManges;
     }
 
+    /**
+     * renvoie game
+     * @return Game
+     */
     public Game getGame() {
         return game;
     }
 
+    /**
+     * initialise la game
+     * @param game Game
+     */
     public void setGame(Game game) {
         this.game = game;
     }
 
+    /**
+     * renvoie grille decors
+     * @return ObjetDecors[][]
+     */
     public ObjetDecors[][] getGrilleDecors() {
         return grilleDecors;
     }
 
+    /**
+     * renvoie la grille objet mobiles
+     * @return ObjetMobille[][]
+     */
     public ObjetMobile[][] getGrilleObjetsMobiles() {
         return grilleObjetsMobiles;
     }
 
+    /**
+     * renvoie la dernieres cases suprimees
+     * @return Objet[]
+     */
     public Objet[] getDernieresCasesSupprimees() {
         return dernieresCasesSupprimees;
     }
 
+    /**
+     * initialise grille decors
+     * @param grilleDecors ObjetDecors[][]
+     */
     public void setGrilleDecors(ObjetDecors[][] grilleDecors) {
         this.grilleDecors = grilleDecors;
     }
 
+    /**
+     * initialise grille objet mobiles
+     * @param grilleObjetsMobiles ObjetMobile[][]
+     */
     public void setGrilleObjetsMobiles(ObjetMobile[][] grilleObjetsMobiles) {
         this.grilleObjetsMobiles = grilleObjetsMobiles;
     }
 
+    /**
+     * initialise dernieres cases supprimees
+     * @param dernieresCasesSupprimees Objet[]
+     */
     public void setDernieresCasesSupprimees(Objet[] dernieresCasesSupprimees) {
         this.dernieresCasesSupprimees = dernieresCasesSupprimees;
     }
 
+    /**
+     * initialise pac-man
+     * @param pacMan ObjetMobile
+     */
     public void setPacMan(ObjetMobile pacMan) {
         PacMan = pacMan;
     }
 
+    /**
+     * renvoie fantomes
+     * @return ObjetMobile[]
+     */
     public ObjetMobile[] getFantomes() {
         return fantomes;
     }
 
+    /**
+     * initialise fantomes
+     * @param fantomes ObjetMobile[]
+     */
     public void setFantomes(ObjetMobile[] fantomes) {
         this.fantomes = fantomes;
     }
 
+    /**
+     * initialise serie
+     * @param serie int
+     */
     public void setSerie(int serie) {
         this.serie = serie;
     }
