@@ -4,6 +4,7 @@ import BACK.CONTROLEUR.ControleBouton;
 import BACK.Game;
 import BACK.PREDEF.Liens;
 import javafx.geometry.HPos;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -12,7 +13,7 @@ import javafx.scene.layout.RowConstraints;
 import java.util.Objects;
 
 public class MenuView extends GridPane {
-    private Button boutJouer, boutRecord, boutCommentJouer;
+    private Button boutJouer, boutRecord, boutCommentJouer, boutQuitter;
     private Game game;
 
     public MenuView(ControleBouton controleBouton, Game game){
@@ -21,6 +22,7 @@ public class MenuView extends GridPane {
         boutJouer.setOnAction(controleBouton);
         boutRecord.setOnAction(controleBouton);
         boutCommentJouer.setOnAction(controleBouton);
+        boutQuitter.setOnAction(controleBouton);
     }
 
     public void initGrid(){
@@ -49,11 +51,17 @@ public class MenuView extends GridPane {
         boutCommentJouer.setStyle("-fx-font: 22 arial; -fx-base: #b6e7c9;");
         GridPane.setHalignment(boutCommentJouer, HPos.CENTER);
 
+        boutQuitter = new Button("Quitter");
+        boutQuitter.setId("button");
+        boutQuitter.setStyle("-fx-font: 22 arial; -fx-base: #b6e7c9;");
+        boutQuitter.setMaxWidth(100);
+        GridPane.setHalignment(boutQuitter, HPos.CENTER);
 
 
         this.add(boutJouer,0,2);
         this.add(boutRecord, 0,3);
         this.add(boutCommentJouer,0,4);
+        this.add(boutQuitter,0,5);
 
         //this.getStylesheets().add(getClass().getResource("./style.css").toExternalForm());
     }
@@ -69,5 +77,10 @@ public class MenuView extends GridPane {
     public Button getBoutCommentJouer() {
         return boutCommentJouer;
     }
+
+    public Button getBoutQuitter() {
+        return boutQuitter;
+    }
+
 
 }

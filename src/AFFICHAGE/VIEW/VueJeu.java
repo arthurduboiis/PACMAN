@@ -38,7 +38,7 @@ public class VueJeu extends BorderPane{
 
     private Button retourMenu;
 
-    Text score;
+    Text score, niveau;
     Text nbVies;
 
 
@@ -63,22 +63,29 @@ public class VueJeu extends BorderPane{
         this.setId("borderpane");
         retourMenu = new Button("Menu principal");
         this.gridPane = new GridPane();
+
+        Font font = Font.font ("Minecraft", 15);
+
         score = new Text();
         System.out.println();
         nbVies = new Text("Nombre de vies restantes: XX");
 
+        niveau = new Text("Niveau : X");
+        niveau.setFont(font);
+        niveau.setFill(Color.WHITE);
 
-        score.setFont(Font.font ("Minecraft", 20));
+        score.setFont(font);
         score.setFill(Color.WHITE);
 
-        nbVies.setFont(Font.font ("Minecraft", 20));
+        nbVies.setFont(font);
         nbVies.setFill(Color.WHITE);
 
         GridPane barreHauteInfos = new GridPane();
         barreHauteInfos.setHgap(80);
 
         barreHauteInfos.add(score, 1,0);
-        barreHauteInfos.add(nbVies, 2,0);
+        barreHauteInfos.add(niveau,2,0);
+        barreHauteInfos.add(nbVies, 3,0);
         barreHauteInfos.setPadding(new Insets(10,10,10,10));
         this.setTop(barreHauteInfos);
         initImages();
@@ -203,8 +210,9 @@ public class VueJeu extends BorderPane{
 
 
 
-        this.score.setText("SCORE: " + game.getScore());
-        this.nbVies.setText("Nombre de vies restantes: " + game.getNombreVies());
+        this.score.setText("SCORE : " + game.getScore());
+        this.nbVies.setText("Nombre de vies restantes : " + game.getNombreVies());
+        this.niveau.setText("Niveau : " + game.getNiveauActuel());
 
         int colonne = 0;
         int ligne = 0;

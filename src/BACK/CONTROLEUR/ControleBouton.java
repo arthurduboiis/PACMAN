@@ -86,6 +86,12 @@ public class ControleBouton implements EventHandler {
             primaryStage.setScene(scene);
         }
 
+        if(source.equals(menuView.getBoutQuitter())){
+
+            System.exit(0);
+
+        }
+
         // BOUTON FENETRE NAME
 
         if(source.equals(nameView.getButtonJouer())){
