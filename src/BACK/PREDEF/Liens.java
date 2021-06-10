@@ -9,23 +9,12 @@ public class Liens {
 
 
     private static String cheminMur = "file:src/RESSOURCES/IMAGES/mur.png";
-    /*
-    private static String cheminFantomeRouge = "file:src/RESSOURCES/IMAGES/fantome_rouge.png";
-    private static String cheminFantomeVert = "file:src/RESSOURCES/IMAGES/fantome_vert.png";
-    private static String cheminFantomeRose = "file:src/RESSOURCES/IMAGES/fantome_rose.png";
-    private static String cheminFantomeBleu = "file:src/RESSOURCES/IMAGES/fantome_bleu.png";
-    private static String cheminFantomeBoost = "file:src/RESSOURCES/IMAGES/fantome_boost.png";
-     */
+
     private static String cheminFondNoir = "file:src/RESSOURCES/IMAGES/fond_noir.png";
     private static String cheminGrosBonbon = "file:src/RESSOURCES/IMAGES/gros_bonbon.png";
     private static String cheminPetitBonbon = "file:src/RESSOURCES/IMAGES/petit_bonbon.png";
     private static String cheminPorteClosed = "file:src/RESSOURCES/IMAGES/porte_closed.png";
-    /*
-    private static String cheminPacManHaut = "file:src/RESSOURCES/IMAGES/pacman_haute.png";
-    private static String cheminPacManDroite = "file:src/RESSOURCES/IMAGES/pacman_droite.png";
-    private static String cheminPacManGauche = "file:src/RESSOURCES/IMAGES/pacman_gauche.png";
-    private static String cheminPacManBas = "file:src/RESSOURCES/IMAGES/pacman_bas.png";
-     */
+
     private static String cheminFichierRecord = "src/RESSOURCES/records.txt";
     private static String cheminEscape = "file:src/RESSOURCES/IMAGES/escape.png";
     private static String cheminFleches = "file:src/RESSOURCES/IMAGES/Fleches.png";
