@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"AFFICHAGE"},{"l":"AFFICHAGE.VIEW"},{"l":"All Packages","u":"allpackages-index.html"},{"l":"BACK"},{"l":"BACK.CONTROLEUR"},{"l":"BACK.OBJETS"},{"l":"BACK.PREDEF"}];updateSearchResults();
