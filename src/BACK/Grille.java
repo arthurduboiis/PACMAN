@@ -214,16 +214,9 @@ public class Grille {
 
 
 
-    public Objet contains(int x, int y){
-        if(x > 21)
-            x = 0;
-        else if(x < 0)
-            x = 21;
 
-        if(y > 21)
-            y = 0;
-        else if(y < 0)
-            y = 21;
+    public Objet contains(int x, int y){
+
         return grilleJeu[x][y];
     }
 
