@@ -50,7 +50,6 @@ public class Grille {
         try {
             initGrille();
         } catch (IOException e) {
-            System.out.println("Erreur à l'initialisation de la grille");
         }
     }
 
@@ -187,7 +186,6 @@ public class Grille {
 
 
                         default:
-                            System.out.println("ERREUR INITIALISATION" + x + " " + y);
                     }
 
                     //toReturn[x][y] = convert;
@@ -217,7 +215,15 @@ public class Grille {
 
 
     public Objet contains(int x, int y){
+        if(x > 21)
+            x = 0;
+        else if(x < 0)
+            x = 21;
 
+        if(y > 21)
+            y = 0;
+        else if(y < 0)
+            y = 21;
         return grilleJeu[x][y];
     }
 
@@ -251,7 +257,6 @@ public class Grille {
 
                 if(this.grilleJeu[i][j].getObjetMobile() != null){
 
-                    System.out.println(this.grilleJeu[i][j].getType() + " " + this.grilleJeu[i][j].getObjetMobile().getCoordonees()[0] + " " + this.grilleJeu[i][j].getObjetMobile().getCoordonees()[1]);
                 }
 
             }
@@ -636,7 +641,6 @@ public class Grille {
                 return 5000;
             }
             default -> {
-                System.out.println("ERREUR: nombre de points par type");
                 return 0;
             }
         }
@@ -701,7 +705,6 @@ public class Grille {
             }
 
             grilleJeu[18][10] = new ObjetDecors(typeToPop);
-            System.out.println("Fruit pop:" + typeToPop);
         }
     }
 

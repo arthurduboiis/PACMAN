@@ -64,7 +64,6 @@ public class VueJeu extends BorderPane{
         retourMenu = new Button("Menu principal");
         this.gridPane = new GridPane();
         score = new Text();
-        System.out.println();
         nbVies = new Text("Nombre de vies restantes: XX");
 
 
@@ -82,7 +81,6 @@ public class VueJeu extends BorderPane{
         barreHauteInfos.setPadding(new Insets(10,10,10,10));
         this.setTop(barreHauteInfos);
         initImages();
-        System.out.println(Arrays.toString(images));
         this.setBottom(gridPane);
     }
 
@@ -215,7 +213,6 @@ public class VueJeu extends BorderPane{
             {
                 //ImageView img = new ImageView(game.getGrilleDuJeu().getGrilleJeu()[i][j].getImage());
                 ImageView img = new ImageView();
-                //System.out.println(game.getGrilleDuJeu().getGrilleJeu()[i][j].getType());
 
                 switch (game.getGrilleDuJeu().getGrilleJeu()[i][j].getType()){
 
@@ -339,7 +336,6 @@ public class VueJeu extends BorderPane{
             switch (fantome) {
                 case "FB":
                     Directions dirB = game.getDirectionsF()[0];
-                    System.out.println("dir B : " + dirB);
                     switch (dirB) {
                         case DROITE, NULL -> FBImg = new Image(Liens.getCheminFantomeBleuDroite());
                         case GAUCHE -> FBImg = new Image(Liens.getCheminFantomeBleuGauche());
@@ -348,7 +344,6 @@ public class VueJeu extends BorderPane{
                     }
                 case "FV":
                     Directions dirV = game.getDirectionsF()[1];
-                    System.out.println("dir V : " + dirV);
                     switch (dirV) {
                         case DROITE, NULL -> FVImg = new Image(Liens.getCheminFantomeVertDroite());
                         case GAUCHE -> FVImg = new Image(Liens.getCheminFantomeVertGauche());
@@ -357,7 +352,6 @@ public class VueJeu extends BorderPane{
                     }
                 case "FRose":
                     Directions dirRose = game.getDirectionsF()[2];
-                    System.out.println("dir Rose : " + dirRose);
                     switch (dirRose) {
                         case DROITE, NULL -> FRoseImg = new Image(Liens.getCheminFantomeRoseDroite());
                         case GAUCHE -> FRoseImg = new Image(Liens.getCheminFantomeRoseGauche());
@@ -366,7 +360,6 @@ public class VueJeu extends BorderPane{
                     }
                 case "FRouge":
                     Directions dirRouge = game.getDirectionsF()[3];
-                    System.out.println("dir Rouge : " + dirRouge);
                     switch (dirRouge) {
                         case DROITE, NULL -> FRougeImg = new Image(Liens.getCheminFantomeRougeDroite());
                         case GAUCHE -> FRougeImg = new Image(Liens.getCheminFantomeRougeGauche());

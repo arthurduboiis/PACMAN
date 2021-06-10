@@ -14,3 +14,6 @@ nfezpkmnlz,2250
 nfpdznpz,1850
 f nzeklc,2550
 vv,3650
+e,5550
+ddd,3225
+dd,13000
