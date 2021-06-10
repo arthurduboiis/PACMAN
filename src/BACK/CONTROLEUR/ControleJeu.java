@@ -21,6 +21,10 @@ public class ControleJeu {
 
     public Audio audio;
 
+    /**
+     * initialise le control jeu
+     * @param game ControlJeu
+     */
     public ControleJeu(Game game){
         this.game = game;
         //addControleJeu(scene);
@@ -32,8 +36,10 @@ public class ControleJeu {
     }
 
 
-
-
+    /**
+     * initialise le control pause
+     * @param scene Scene
+     */
     public void addControlePause(Scene scene){
 
 
@@ -50,6 +56,10 @@ public class ControleJeu {
         });
     }
 
+    /**
+     * initialise le control fin
+     * @param scene Scene
+     */
     public void addControleFin(Scene scene){
 
         scene.setOnKeyPressed(new EventHandler<KeyEvent>()
@@ -64,9 +74,11 @@ public class ControleJeu {
         });
     }
 
-
-
-
+    /**
+     * initialise le control jeu
+     * @param scene Scene
+     * @param gridPanePause GridPane
+     */
     public void addControleJeu(Scene scene, GridPane gridPanePause) {
 
 
