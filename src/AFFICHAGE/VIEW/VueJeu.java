@@ -343,7 +343,7 @@ public class VueJeu extends BorderPane{
         if(!game.isBoosted()){
             switch (fantome) {
                 case "FB":
-                    Directions dirB = game.getDirectionsF()[0];
+                    Directions dirB = game.getDirectionsF()[2];
                     switch (dirB) {
                         case DROITE, NULL -> FBImg = new Image(Liens.getCheminFantomeBleuDroite());
                         case GAUCHE -> FBImg = new Image(Liens.getCheminFantomeBleuGauche());
@@ -351,7 +351,7 @@ public class VueJeu extends BorderPane{
                         case BAS -> FBImg = new Image(Liens.getCheminFantomeBleuBas());
                     }
                 case "FV":
-                    Directions dirV = game.getDirectionsF()[1];
+                    Directions dirV = game.getDirectionsF()[3];
                     switch (dirV) {
                         case DROITE, NULL -> FVImg = new Image(Liens.getCheminFantomeVertDroite());
                         case GAUCHE -> FVImg = new Image(Liens.getCheminFantomeVertGauche());
@@ -359,7 +359,7 @@ public class VueJeu extends BorderPane{
                         case BAS -> FVImg = new Image(Liens.getCheminFantomeVertBas());
                     }
                 case "FRose":
-                    Directions dirRose = game.getDirectionsF()[2];
+                    Directions dirRose = game.getDirectionsF()[0];
                     switch (dirRose) {
                         case DROITE, NULL -> FRoseImg = new Image(Liens.getCheminFantomeRoseDroite());
                         case GAUCHE -> FRoseImg = new Image(Liens.getCheminFantomeRoseGauche());
@@ -367,7 +367,7 @@ public class VueJeu extends BorderPane{
                         case BAS -> FRoseImg = new Image(Liens.getCheminFantomeRoseBas());
                     }
                 case "FRouge":
-                    Directions dirRouge = game.getDirectionsF()[3];
+                    Directions dirRouge = game.getDirectionsF()[1];
                     switch (dirRouge) {
                         case DROITE, NULL -> FRougeImg = new Image(Liens.getCheminFantomeRougeDroite());
                         case GAUCHE -> FRougeImg = new Image(Liens.getCheminFantomeRougeGauche());
