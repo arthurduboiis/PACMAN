@@ -262,14 +262,17 @@ public class Game<boosted> {
         if (direction != null && !direction.equals(Directions.NULL)) {
 
             verif = this.grilleDuJeu.deplacerFantome(direction, fantome);
+            directionsF[ordre] = direction;
             while (!verif) {
                     Directions directTempo = this.grilleDuJeu.genDir();
                     verif = this.grilleDuJeu.deplacerFantome(directTempo, fantome);
+                    directionsF[ordre] = directTempo;
             }
         } else {
             while (!verif) {
                 Directions directTempo = this.grilleDuJeu.genDir();
                 verif = this.grilleDuJeu.deplacerFantome(directTempo, fantome);
+                directionsF[ordre] = directTempo;
             }
 
         }
