@@ -47,11 +47,22 @@ public class VueJeu extends BorderPane{
     static int y = 0;
 
 
+    /**
+     * initialise la VueJeu
+     * @param controleJeu ControleJeu
+     * @param game Game
+     */
     public VueJeu(ControleJeu controleJeu, Game game) {
         this.game = game;
         initGrid();
         initImages();
     }
+
+    /**
+     * initialise la VueJeu
+     * @param game Game
+     * @param scene Scene
+     */
     public VueJeu(Game game, Scene scene){
         this.game = game;
         this.scene = scene;
@@ -59,6 +70,9 @@ public class VueJeu extends BorderPane{
         initImages();
     }
 
+    /**
+     * initialise la grid
+     */
     public void initGrid(){
         this.setId("borderpane");
         retourMenu = new Button("Menu principal");
@@ -86,7 +100,9 @@ public class VueJeu extends BorderPane{
         this.setBottom(gridPane);
     }
 
-
+    /**
+     * initialise les boost images
+     */
     public void setBoostImages(){
 
 
@@ -110,6 +126,9 @@ public class VueJeu extends BorderPane{
 
     }
 
+    /**
+     * initialise stop
+     */
     public void stop(){
 
         GridPane gridFin = new GridPane();
@@ -161,7 +180,9 @@ public class VueJeu extends BorderPane{
     }
 
 
-
+    /**
+     * initialise les images
+     */
     public void initImages(){
         this.images = new Image[20];
         images[0] = new Image(Liens.getCheminFantomeBleu());
@@ -190,10 +211,12 @@ public class VueJeu extends BorderPane{
 
     }
 
-
     SpriteAnimation imgAnim, imgAnimFB, imgAnimFV, imgAnimFRose, imgAnimFRouge;
     private int nbFrame;
 
+    /**
+     * initialise le refresh
+     */
     public void refresh(){
 
         this.gridPane.getChildren().clear();
@@ -282,6 +305,9 @@ public class VueJeu extends BorderPane{
 
     }
 
+    /**
+     * initialise les images touches
+     */
     public void initImagesTouches() {
         imagesTouches = new Image[3];
         imagesTouches[0] = new Image(Liens.getCheminFleches());
@@ -289,6 +315,10 @@ public class VueJeu extends BorderPane{
         imagesTouches[2] = new Image(Liens.getCheminSpace());
     }
 
+    /**
+     * renvoie les images touches view
+     * @return ImageView[]
+     */
     public ImageView[] getImagesTouchesViewResized() {
         ImageView[] resized = new ImageView[3];
         for(int i = 0; i<3; i++) {
@@ -301,10 +331,17 @@ public class VueJeu extends BorderPane{
         return resized;
     }
 
+    /**
+     * renvoie les images touches
+     * @return Image[]
+     */
     public Image[] getImagesTouches() {
         return this.imagesTouches;
     }
 
+    /**
+     * initialise pacman image
+     */
     public void setPacmanImage() {
         Directions dir = game.getDirections();
         nbFrame = 3;
@@ -322,6 +359,11 @@ public class VueJeu extends BorderPane{
             pacmanImg = dirGivesImage(dir);  //ON AFFICHE L'IMAGE SI ON EST SUR LES TP QUAND MEME (A RETIRER)
     }
 
+    /**
+     * renvoie les direction image
+     * @param dir Direction
+     * @return Image
+     */
     public Image dirGivesImage(Directions dir) {
         return switch (dir) {
             case DROITE -> new Image(Liens.getCheminPacManDroite());
@@ -332,6 +374,10 @@ public class VueJeu extends BorderPane{
         };
     }
 
+    /**
+     * initialise les fantomes
+     * @param fantome String
+     */
     public void setFantome(String fantome){
         nbFrame = 2;
 
@@ -378,6 +424,10 @@ public class VueJeu extends BorderPane{
     }
 
     private boolean activeEE1;
+
+    /**
+     * initialise les EE1 images
+     */
     public void initEE1Images(){
         activeEE1 = true;
         images[5] = new Image(Liens.getCheminGrosBonbonEE1());
@@ -392,6 +442,11 @@ public class VueJeu extends BorderPane{
 
     //////////////////////////////////////////////
 
+    /**
+     * initialise les attribus
+     * @param s Text
+     * @param v Text
+     */
     public void setAttrib(Text s, Text v){
 
         this.score = s;
@@ -399,40 +454,82 @@ public class VueJeu extends BorderPane{
 
     }
 
-
+    /**
+     * renvoie les images
+     * @return Image[]
+     */
     public Image[] getImages() {
         return images;
     }
 
+    /**
+     * initialise les images
+     * @param images Image[]
+     */
     public void setImages(Image[] images) {
         this.images = images;
     }
 
+    /**
+     * renvoie les stage
+     * @return Stage
+     */
     public Stage getStage() {
         return stage;
     }
 
+    /**
+     * initialise les stages
+     * @param stage Stage
+     */
     public void setStage(Stage stage) {
         this.stage = stage;
     }
+
+    /**
+     * renvoie le Text du score
+     * @return Text
+     */
     public Text getScore() {
         return score;
     }
 
+    /**
+     * initialise le Text du score
+     * @param score Text
+     */
     public void setScore(Text score) {
         this.score = score;
     }
 
+    /**
+     * renvoie le Text du nombre de vie
+     * @return Text
+     */
     public Text getNbVies() {
         return nbVies;
     }
 
+    /**
+     * initialise le Text du nombre de vie
+     * @param nbVies Text
+     */
     public void setNbVies(Text nbVies) {
         this.nbVies = nbVies;
     }
+
+    /**
+     * initialise le action retour menu
+     * @param controleBouton ControlBouton
+     */
     public void setActionRetourMenu(ControleBouton controleBouton){
         this.retourMenu.setOnAction(controleBouton);
     }
+
+    /**
+     * renvoie le button retour menu
+     * @return Button
+     */
     public Button getRetourMenu() {
         return retourMenu;
     }
