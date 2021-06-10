@@ -31,6 +31,9 @@ public class FinView extends GridPane {
     }
 
 
+    /**
+     * initialise la grid
+     */
     public void initGrid(){
         this.setId("pane");
         ColumnConstraints columnuss = new ColumnConstraints(game.getWIDTH_FEN());
@@ -69,12 +72,19 @@ public class FinView extends GridPane {
 
     }
 
+    /**
+     * initialise le controller
+     * @param controleBouton ControlBouton
+     */
     public void setController(ControleBouton controleBouton){
         this.retourMenu.setOnAction(controleBouton);
     }
 
 
-
+    /**
+     * renvoie le retour Menu
+     * @return Button
+     */
     public Button getRetourMenu() {
         return retourMenu;
     }
