@@ -97,6 +97,8 @@ public class Grille {
 <<<<<<<<< Temporary merge branch 1
             if (ch != '\r') {
                 if(ch != '\n') {
+
+
                     tab[x][y] = ch;
                     switch (ch) {
                         case '0':
@@ -190,7 +192,6 @@ public class Grille {
                         default:
                             System.out.println("ERREUR INITIALISATION" + x + " " + y);
                     }
-
                     //toReturn[x][y] = convert;
                     y += 1;
 =========
@@ -309,6 +310,7 @@ public class Grille {
 
         return this.PacMan;
     }
+
 
 
 
