@@ -95,6 +95,7 @@ public class Grille {
 
 
             if (ch != '\n') {
+
                 tab[x][y] = ch;
                 switch (ch) {
                     case '0':
@@ -647,7 +648,7 @@ public class Grille {
 
         typeObjet typeToPop = null;
 
-        if ((nbBonbonsManges < (nbBonbons / 2) && fruitPop == false)){ //TODO: changer ici
+        if ((nbBonbonsManges > (nbBonbons / 2) && fruitPop == false)){
             this.fruitPop = true;
 
             switch(niveauActuel){
