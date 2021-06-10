@@ -23,6 +23,9 @@ public class MenuView extends GridPane {
         boutCommentJouer.setOnAction(controleBouton);
     }
 
+    /**
+     * initialise la Grid
+     */
     public void initGrid(){
         this.setId("pane");
 
@@ -58,14 +61,26 @@ public class MenuView extends GridPane {
         //this.getStylesheets().add(getClass().getResource("./style.css").toExternalForm());
     }
 
+    /**
+     * renvoie le bouton Jouer
+     * @return Button
+     */
     public Button getBoutJouer() {
         return boutJouer;
     }
 
+    /**
+     * renvoie le bouton record
+     * @return Button
+     */
     public Button getBoutRecord() {
         return boutRecord;
     }
 
+    /**
+     * renvoie le bouton comment jouer
+     * @return Button
+     */
     public Button getBoutCommentJouer() {
         return boutCommentJouer;
     }
