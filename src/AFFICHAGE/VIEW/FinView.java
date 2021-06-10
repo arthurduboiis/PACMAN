@@ -52,7 +52,7 @@ public class FinView extends GridPane {
         textScored.setFill(Color.WHITE);
         textScored.setTextAlignment(TextAlignment.CENTER);
         try {
-            textScored.setText("Vous avez fait un score de : " + game.getScore() + "\n Votre est de Meilleur Score : " + game.getRecord().getRecord(Liens.getCheminFichierRecord(),game.getName()) );
+            textScored.setText("Vous avez fait un score de : " + game.getScore() + "\n Votre meilleur score : " + game.getRecord().getRecord(Liens.getCheminFichierRecord(),game.getName()) );
         } catch (IOException e) {
             e.printStackTrace();
         }
