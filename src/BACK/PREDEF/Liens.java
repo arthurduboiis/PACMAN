@@ -98,213 +98,424 @@ public class Liens {
     /////////////////////////////////////////////////
 
 
+    /**
+     * renvoie le chemin carte1
+     * @return String
+     */
     public static String getCheminCarte1() {
         return cheminCarte1;
     }
 
+    /**
+     * renvoie le chemin carte2
+     * @return String
+     */
     public static String getCheminCarte2() {
         return cheminCarte2;
     }
 
+    /**
+     * renvoie le chemin carte3
+     * @return String
+     */
     public static String getCheminCarte3() {
         return cheminCarte3;
     }
 
+    /**
+     * renvoie le chemin mur
+     * @return String
+     */
     public static String getCheminMur() {
         return cheminMur;
     }
 
+    /**
+     * renvoie le chemin fantome rouge
+     * @return String
+     */
     public static String getCheminFantomeRouge() {
         return cheminFantomeRouge;
     }
 
+    /**
+     * renvoie le chemin fantome vert
+     * @return String
+     */
     public static String getCheminFantomeVert() {
         return cheminFantomeVert;
     }
 
+    /**
+     * renvoie le chemin fantome rose
+     * @return String
+     */
     public static String getCheminFantomeRose() {
         return cheminFantomeRose;
     }
 
+    /**
+     * renvoie le chemin fantome bleu
+     * @return String
+     */
     public static String getCheminFantomeBleu() {
         return cheminFantomeBleu;
     }
 
+    /**
+     * renvoie le chemin fantome boost
+     * @return String
+     */
     public static String getCheminFantomeBoost() { return cheminFantomeBoost; }
 
+    /**
+     * renvoie le chemin fond noir
+     * @return String
+     */
     public static String getCheminFondNoir() {
         return cheminFondNoir;
     }
 
+    /**
+     * renvoie le chemin gros bonbon
+     * @return String
+     */
     public static String getCheminGrosBonbon() {
         return cheminGrosBonbon;
     }
 
+    /**
+     * renvoie le chemin petit bonbon
+     * @return String
+     */
     public static String getCheminPetitBonbon() {
         return cheminPetitBonbon;
     }
 
+    /**
+     * renvoie le chemin gros porte closed
+     * @return String
+     */
     public static String getCheminPorteClosed() {
         return cheminPorteClosed;
     }
 
+    /**
+     * renvoie le chemin pac-man haut
+     * @return String
+     */
     public static String getCheminPacManHaut() {
         return cheminPacManHaut;
     }
 
+    /**
+     * renvoie le chemin pac-man droite
+     * @return String
+     */
     public static String getCheminPacManDroite() {
         return cheminPacManDroite;
     }
 
+    /**
+     * renvoie le chemin pac-man gauhce
+     * @return String
+     */
     public static String getCheminPacManGauche() {
         return cheminPacManGauche;
     }
 
+    /**
+     * renvoie le chemin pac-man bas
+     * @return String
+     */
     public static String getCheminPacManBas() {
         return cheminPacManBas;
     }
 
+    /**
+     * renvoie le chemin fichier record
+     * @return String
+     */
     public static String getCheminFichierRecord() {
         return cheminFichierRecord;
     }
 
+    /**
+     * renvoie le chemin space
+     * @return String
+     */
     public static String getCheminSpace() {
         return cheminSpace;
     }
 
+    /**
+     * renvoie le chemin fleche
+     * @return String
+     */
     public static String getCheminFleches() {
         return cheminFleches;
     }
 
+    /**
+     * renvoie le chemin escape
+     * @return String
+     */
     public static String getCheminEscape() {
         return cheminEscape;
     }
 
-
+    /**
+     * renvoie le chemin son1
+     * @return String
+     */
     public static String getCheminSon_1() {
         return cheminSon_1;
     }
 
+    /**
+     * renvoie le chemin son eat ghost
+     * @return String
+     */
     public static String getCheminSon_eat_ghost() {
         return cheminSon_eat_ghost;
     }
 
+    /**
+     * renvoie le chemin son chomp
+     * @return String
+     */
     public static String getCheminSon_chomp() {
         return cheminSon_chomp;
     }
 
+    /**
+     * renvoie le chemin son eat fruit
+     * @return String
+     */
     public static String getCheminSon_eatfruit() {
         return cheminSon_eatfruit;
     }
 
+    /**
+     * renvoie le chemin son death
+     * @return String
+     */
     public static String getCheminSon_death() {
         return cheminSon_death;
     }
 
+    /**
+     * renvoie le chemin son eat intermission
+     * @return String
+     */
     public static String getCheminSon_intermission() {
         return cheminSon_intermission;
     }
 
+    /**
+     * renvoie le chemin fantome rouge droite
+     * @return String
+     */
     public static String getCheminFantomeRougeDroite() {
         return cheminFantomeRougeDroite;
     }
 
+    /**
+     * renvoie le chemin fantome rouge bas
+     * @return String
+     */
     public static String getCheminFantomeRougeBas() {
         return cheminFantomeRougeBas;
     }
 
+    /**
+     * renvoie le chemin fantome rouge haut
+     * @return String
+     */
     public static String getCheminFantomeRougeHaut() {
         return cheminFantomeRougeHaut;
     }
 
+    /**
+     * renvoie le chemin fantome rouge gauche
+     * @return String
+     */
     public static String getCheminFantomeRougeGauche() {
         return cheminFantomeRougeGauche;
     }
 
+    /**
+     * renvoie le chemin fantome vert droite
+     * @return String
+     */
     public static String getCheminFantomeVertDroite() {
         return cheminFantomeVertDroite;
     }
 
+    /**
+     * renvoie le chemin fantome vert bas
+     * @return String
+     */
     public static String getCheminFantomeVertBas() {
         return cheminFantomeVertBas;
     }
 
+    /**
+     * renvoie le chemin fantome vert haut
+     * @return String
+     */
     public static String getCheminFantomeVertHaut() {
         return cheminFantomeVertHaut;
     }
 
+    /**
+     * renvoie le chemin fantome vert gauche
+     * @return String
+     */
     public static String getCheminFantomeVertGauche() {
         return cheminFantomeVertGauche;
     }
 
+    /**
+     * renvoie le chemin fantome rose droite
+     * @return String
+     */
     public static String getCheminFantomeRoseDroite() {
         return cheminFantomeRoseDroite;
     }
 
+    /**
+     * renvoie le chemin fantome rose bas
+     * @return String
+     */
     public static String getCheminFantomeRoseBas() {
         return cheminFantomeRoseBas;
     }
 
+    /**
+     * renvoie le chemin fantome rose haut
+     * @return String
+     */
     public static String getCheminFantomeRoseHaut() {
         return cheminFantomeRoseHaut;
     }
 
+    /**
+     * renvoie le chemin fantome rose gauche
+     * @return String
+     */
     public static String getCheminFantomeRoseGauche() {
         return cheminFantomeRoseGauche;
     }
 
+    /**
+     * renvoie le chemin fantome bleu droite
+     * @return String
+     */
     public static String getCheminFantomeBleuDroite() {
         return cheminFantomeBleuDroite;
     }
 
+    /**
+     * renvoie le chemin fantome bleu bas
+     * @return String
+     */
     public static String getCheminFantomeBleuBas() {
         return cheminFantomeBleuBas;
     }
 
+    /**
+     * renvoie le chemin fantome bleu haut
+     * @return String
+     */
     public static String getCheminFantomeBleuHaut() {
         return cheminFantomeBleuHaut;
     }
 
+    /**
+     * renvoie le chemin fantome bleu gauche
+     * @return String
+     */
     public static String getCheminFantomeBleuGauche() {
         return cheminFantomeBleuGauche;
     }
 
+    /**
+     * renvoie le chemin fantome bleu cerise
+     * @return String
+     */
     public static String getCheminCerise() {
         return cheminCerise;
     }
 
+    /**
+     * renvoie le chemin fantome fraise
+     * @return String
+     */
     public static String getCheminFraise() {
         return cheminFraise;
     }
 
+    /**
+     * renvoie le chemin fantome raisin
+     * @return String
+     */
     public static String getCheminRaisin() {
         return cheminRaisin;
     }
 
+    /**
+     * renvoie le chemin fantome pomme
+     * @return String
+     */
     public static String getCheminPomme() {
         return cheminPomme;
     }
 
+    /**
+     * renvoie le chemin fantome orange
+     * @return String
+     */
     public static String getCheminOrange() {
         return cheminOrange;
     }
 
+    /**
+     * renvoie le chemin fantome banane
+     * @return String
+     */
     public static String getCheminBanane() {
         return cheminBanane;
     }
 
+    /**
+     * renvoie le chemin fantome poire
+     * @return String
+     */
     public static String getCheminPoire() {
         return cheminPoire;
     }
 
+    /**
+     * renvoie le chemin fantome mur EE1
+     * @return String
+     */
     public static String getCheminMurEE1() {
         return cheminMurEE1;
     }
 
+    /**
+     * renvoie le chemin fantome petit bonbon EE1
+     * @return String
+     */
     public static String getCheminBonbonEE1() {
         return cheminBonbonEE1;
     }
 
+    /**
+     * renvoie le chemin fantome gros bonbon EE1
+     * @return String
+     */
     public static String getCheminGrosBonbonEE1() {
         return cheminGrosBonbonEE1;
     }
