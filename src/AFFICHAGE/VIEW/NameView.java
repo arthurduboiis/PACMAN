@@ -29,6 +29,9 @@ public class NameView extends GridPane {
         buttonJouer.setOnAction(controleBouton);
     }
 
+    /**
+     * initialise la grid
+     */
     public void initGrid(){
         this.setId("pane");
 
@@ -78,22 +81,42 @@ public class NameView extends GridPane {
 
     }
 
+    /**
+     * renvoie le bouton joueur
+     * @return Button
+     */
     public Button getButtonJouer() {
         return buttonJouer;
     }
 
+    /**
+     * renvoie le text field du nom entrer
+     * @return TextField
+     */
     public TextField getEnterName() {
         return enterName;
     }
 
+    /**
+     * initialise le text field du nom entrer
+     * @param enterName TextField
+     */
     public void setEnterName(TextField enterName) {
         this.enterName = enterName;
     }
 
+    /**
+     * renvoie le Text error
+     * @return Text
+     */
     public Text getError() {
         return error;
     }
 
+    /**
+     * initialise le text error
+     * @param error String
+     */
     public void setError(String error) {
         this.error.setText(error);
     }
