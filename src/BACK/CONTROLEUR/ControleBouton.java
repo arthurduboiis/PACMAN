@@ -31,6 +31,11 @@ public class ControleBouton implements EventHandler {
 
     private NameView nameView;
 
+    /**
+     * initialise le controle Bouton
+     * @param primaryStage Stage
+     * @param game Game
+     */
     public ControleBouton(Stage primaryStage, Game game){
         this.game = game;
 
@@ -186,26 +191,50 @@ public class ControleBouton implements EventHandler {
 
     }
 
+    /**
+     * renvoie le primary stage
+     * @return Stage
+     */
     public Stage getPrimaryStage() {
         return primaryStage;
     }
 
+    /**
+     * renvoie le menu view
+     * @return MenuView
+     */
     public MenuView getMenuView() {
         return menuView;
     }
 
+    /**
+     * renvoie le record view
+     * @return RecordView
+     */
     public RecordView getRecordView() {
         return recordView;
     }
 
+    /**
+     * revnoie le comment jouer view
+     * @return
+     */
     public CommentJouerView getCommentJouerView() {
         return commentJouerView;
     }
 
+    /**
+     * renvoie le name view
+     * @return NameView
+     */
     public NameView getNameView() {
         return nameView;
     }
 
+    /**
+     * renvoie le jeu complet view
+     * @return JeuCompletView
+     */
     public JeuCompletView getJeuCompletView() {
         return jeuCompletView;
     }
