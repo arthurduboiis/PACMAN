@@ -249,7 +249,6 @@ public class Grille {
 
                 if(this.grilleJeu[i][j].getObjetMobile() != null){
 
-                    System.out.println(this.grilleJeu[i][j].getType() + " " + this.grilleJeu[i][j].getObjetMobile().getCoordonees()[0] + " " + this.grilleJeu[i][j].getObjetMobile().getCoordonees()[1]);
                 }
 
             }
