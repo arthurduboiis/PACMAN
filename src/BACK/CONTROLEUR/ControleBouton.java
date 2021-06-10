@@ -35,6 +35,7 @@ public class ControleBouton implements EventHandler {
         this.game = game;
 
         menuView = new MenuView(this,game);
+
         recordView = new RecordView(this,game);
         commentJouerView = new CommentJouerView(this,game);
         jeuCompletView = new JeuCompletView(this,game);
@@ -121,6 +122,11 @@ public class ControleBouton implements EventHandler {
 
                         this.vueJeu = new VueJeu(game,scene);
                         vueJeu.setActionRetourMenu(this);
+                        if(game.isPacDonald()){
+                            vueJeu.initEE1Images();
+                        } else{
+                            vueJeu.initImages();
+                        }
                         controleJeu.addControleJeu(scene, getJeuCompletView().getPauseView());
 
                         jeuCompletView.setVueJeu(this.vueJeu);
@@ -138,8 +144,6 @@ public class ControleBouton implements EventHandler {
                         primaryStage.setScene(scene);
                         game.getTimeline().play();
                         audioMenu.pause();
-                        primaryStage.setResizable(false);
-                        primaryStage.sizeToScene();
 
                     }
                 }catch (IOException e){

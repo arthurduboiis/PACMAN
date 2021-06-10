@@ -50,7 +50,6 @@ public class VueJeu extends BorderPane{
     public VueJeu(ControleJeu controleJeu, Game game) {
         this.game = game;
         initGrid();
-        initImages();
     }
     public VueJeu(Game game, Scene scene){
         this.game = game;
