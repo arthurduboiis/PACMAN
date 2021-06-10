@@ -23,6 +23,17 @@ public class SpriteAnimation extends AnimationTimer {
 
     private long lastFrame = 0;
 
+    /**
+     * initialise sprite Animation
+     * @param imageView ImageView
+     * @param image Image
+     * @param columns int
+     * @param rows int
+     * @param totalFrames int
+     * @param frameWidth int
+     * @param frameHeight int
+     * @param framesPerSecond float
+     */
     public SpriteAnimation(ImageView imageView, Image image, int columns, int rows, int totalFrames, int frameWidth, int frameHeight, float framesPerSecond) {
         this.imageView = imageView;
         imageView.setImage(image);
@@ -71,6 +82,10 @@ public class SpriteAnimation extends AnimationTimer {
 
     }
 
+    /**
+     * renvoie image view
+     * @return ImageView
+     */
     public ImageView getImageView() {
         return imageView;
     }
