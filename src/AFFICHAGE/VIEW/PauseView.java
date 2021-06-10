@@ -68,6 +68,7 @@ public class PauseView extends GridPane {
         recRecord.setArcWidth(20);
         recRecord.setArcHeight(20);
         try {
+            System.out.println(game.getName());
             textRecord = new Text("Meilleur score : " + game.getRecord().getRecord(Liens.getCheminFichierRecord(),game.getName()));
         } catch (IOException e) {
             e.printStackTrace();

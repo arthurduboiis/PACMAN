@@ -139,10 +139,14 @@ public class ControleBouton implements EventHandler {
                         jeuCompletView.initStack();
 
                         game.setVueJeu(jeuCompletView.getVueJeu());
+
                         game.setName(nameView.getEnterName().getText());
-                        jeuCompletView.getPauseView().setTextNom(nameView.getEnterName().getText());
+
+                        jeuCompletView.getPauseView().setTextNom(game.getName());
+                        jeuCompletView.getPauseView().setTextRecord("Votre meilleur score : " + game.getRecord().getRecord(Liens.getCheminFichierRecord(),game.getName()));
+
                         jeuCompletView.getVueJeu().refresh();
-                        //jeuCompletView.getPauseView().setTextRecord(jeuCompletView.getVueJeu().getScore().getText());
+
                         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
                         primaryStage.setScene(scene);
                         game.getTimeline().play();
