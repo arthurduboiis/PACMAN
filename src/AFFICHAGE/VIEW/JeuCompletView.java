@@ -17,14 +17,26 @@ public class JeuCompletView extends StackPane {
 
     }
 
+    /**
+     * initialise le controle jeu
+     * @param controleJeu ControlJeu
+     */
     public void setControleJeu(ControleJeu controleJeu){
         vueJeu = new VueJeu(controleJeu,this.game);
 
     }
+
+    /**
+     * initialise la vue du jeu
+     * @param vueJeu VuueJeu
+     */
     public void setVueJeu(VueJeu vueJeu){
         this.vueJeu = vueJeu;
     }
 
+    /**
+     * initialise Stack
+     */
     public void initStack(){
         this.getChildren().clear();
         this.getChildren().add(vueJeu);
@@ -32,10 +44,18 @@ public class JeuCompletView extends StackPane {
 
     }
 
+    /**
+     * renvoie le pause view
+     * @return PauseView
+     */
     public PauseView getPauseView() {
         return pauseView;
     }
 
+    /**
+     * renvoie la VueJeu
+     * @return VueJeu
+     */
     public VueJeu getVueJeu() {
         return vueJeu;
     }
