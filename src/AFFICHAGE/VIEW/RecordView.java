@@ -30,6 +30,9 @@ public class RecordView extends GridPane {
         retourMenu.setOnAction(controleBouton);
     }
 
+    /**
+     * initialisation de la grid
+     */
     public void initGrid(){
         this.setId("pane");
 
@@ -79,6 +82,10 @@ public class RecordView extends GridPane {
 
     }
 
+    /**
+     * renvoie le bouton retour menu
+     * @return Button
+     */
     public Button getRetourMenu() {
         return retourMenu;
     }
