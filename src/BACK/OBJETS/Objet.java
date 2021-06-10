@@ -14,6 +14,10 @@ public class Objet {
 
     ObjetMobile objetMobile;
 
+    /**
+     * initialise objet
+     * @param t typeObjet
+     */
     public Objet(typeObjet t){
 
         this.type = t;
@@ -22,6 +26,9 @@ public class Objet {
 
     public Objet(){}
 
+    /**
+     * initialisation objet
+     */
     public void initObjet(){
 
         switch (this.type){
@@ -124,35 +131,66 @@ public class Objet {
 
     ///////////////////////////////////
 
-
+    /**
+     * renvoie le type
+     * @return typeObjet
+     */
     public typeObjet getType() {
         return type;
     }
 
+    /**
+     * initialise le type
+     * @param type typeObjet
+     */
     public void setType(typeObjet type) {
         this.type = type;
     }
 
+    /**
+     * renvoie l'image
+     * @return String
+     */
     public String getImage() {
         return image;
     }
 
+    /**
+     * initialise de l'image
+     * @param image String
+     */
     public void setImage(String image) {
         this.image = image;
     }
 
+    /**
+     * verifie si traversable
+     * @return boolean
+     */
     public boolean isTraversable() {
         return isTraversable;
     }
 
+    /**
+     * initialise traversable
+     * @param traversable boolean
+     */
     public void setTraversable(boolean traversable) {
         isTraversable = traversable;
     }
 
+    /**
+     * renvoie objet mobile
+     * @return ObjetMobile
+     */
     public ObjetMobile getObjetMobile() {
         return objetMobile;
     }
 
+    /**
+     * initialise l'objet mobile
+     * @param objetMobile ObjetMobile
+     */
     public void setObjetMobile(ObjetMobile objetMobile) {
         this.objetMobile = objetMobile;
     }
