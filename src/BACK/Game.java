@@ -29,8 +29,6 @@ public class Game<boosted> {
 
     private VueJeu vueJeu;
 
-    //private FinView finView;
-
     private int nombreVies;
 
     private boolean enCours, boosted;
@@ -222,11 +220,6 @@ public class Game<boosted> {
         this.tempsRestantBooste += 20;
         audioBoost.loop();
     }
-
-    public void stop(){
-        //vueJeu.stop();
-    }
-
 
 
 

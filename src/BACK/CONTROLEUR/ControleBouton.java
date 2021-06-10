@@ -26,7 +26,7 @@ public class ControleBouton implements EventHandler {
     Audio audioMenu;
     //private final PauseView pauseView;
     private boolean verif = false;
-    private FinView finView;
+    //private FinView finView;
     private CommentJouerView commentJouerView;
 
     private NameView nameView;
@@ -39,8 +39,8 @@ public class ControleBouton implements EventHandler {
         commentJouerView = new CommentJouerView(this,game);
         jeuCompletView = new JeuCompletView(this,game);
         nameView = new NameView(this,game);
-        finView =  new FinView(game);
-        finView.setController(this);
+        /*finView =  new FinView(game);
+        finView.setController(this);*/
 
         this.primaryStage = primaryStage;
         try {
@@ -170,13 +170,17 @@ public class ControleBouton implements EventHandler {
             primaryStage.setScene(scene);
         }
 
-        if(source.equals(getJeuCompletView().getVueJeu().getRetourMenu())){
-            final Scene scene = menuView.getScene();
-            audioMenu.loop();
-            this.game = new Game();
-            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-            primaryStage.setScene(scene);
+
+        if(getJeuCompletView().getVueJeu() != null){
+            if(source.equals(getJeuCompletView().getVueJeu().getRetourMenu())){
+                final Scene scene = menuView.getScene();
+                audioMenu.loop();
+                this.game = new Game();
+                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                primaryStage.setScene(scene);
+            }
         }
+
 
 
 
@@ -206,7 +210,4 @@ public class ControleBouton implements EventHandler {
         return jeuCompletView;
     }
 
-    public FinView getFinView() {
-        return finView;
-    }
 }

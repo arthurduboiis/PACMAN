@@ -19,7 +19,6 @@ import java.io.IOException;
 public class ControleJeu {
     Game game;
 
-    JeuCompletView jeuCompletView;
     public Audio audio;
 
     public ControleJeu(Game game){
