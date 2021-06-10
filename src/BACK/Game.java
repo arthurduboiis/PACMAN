@@ -53,11 +53,9 @@ public class Game<boosted> {
 
     public boolean direc;
     private int tempsRestantBooste;
-    private Directions[] directionsF;
+    private Directions directionsF[];
 
-    private Directions[] derniereDirectionF = {Directions.NULL, Directions.NULL, Directions.NULL, Directions.NULL};
-
-    boolean[] scatter = {true, true, true, true};
+    boolean[] scatter = {false, false, false, false};
 
     int scatterCompte = 0;
 
@@ -110,6 +108,7 @@ public class Game<boosted> {
     public void run() {
 
 
+        System.out.println("Nombre de bonbons mangés: " + grilleDuJeu.getNbBonbonsManges() + "/" + grilleDuJeu.getNbBonbons());
 
 
 
@@ -120,6 +119,7 @@ public class Game<boosted> {
         grilleDuJeu.genFruit();
 
         jeuPacman();
+
 
         jeuFantomes();
 
@@ -132,10 +132,11 @@ public class Game<boosted> {
         }
 
         grilleDuJeu.printObjetMob();
-
+        System.out.println("//////////////////////////////////");
 
 
         if (checkFin()){
+            System.out.println("FIN DU JEU");
             try {
                 this.record.setRecord(Liens.getCheminFichierRecord(),this.name, String.valueOf(score));
             } catch (IOException e) {
@@ -179,9 +180,8 @@ public class Game<boosted> {
     }
 
     public void jeuFantomes(){
-        if(!boosted) {
-            scatterCompte++;
-        }
+        scatterCompte++;
+
         ObjetMobile[] tabFantome = this.grilleDuJeu.getFantomes();
         Noeud[][] tabCoo= new Noeud[22][22];
         Noeud fantomeRouge = null;
@@ -213,7 +213,7 @@ public class Game<boosted> {
                 } else if (this.grilleDuJeu.getGrilleJeu()[i][j].equals(this.grilleDuJeu.getPacMan())) {
                     pacman = new Noeud(i, j, "p");
                     tabCoo[i][j] = pacman;
-                } else if ((this.grilleDuJeu.getGrilleJeu()[i][j].isTraversable() || this.grilleDuJeu.contains(i,j).getType().equals(typeObjet.PORTE)) && !this.grilleDuJeu.contains(i, j).getType().equals(typeObjet.TELEPORT) ){
+                } else if (this.grilleDuJeu.getGrilleJeu()[i][j].isTraversable() || this.grilleDuJeu.contains(i,j).getType().equals(typeObjet.PORTE) ){
                     tabCoo[i][j] = new Noeud(i, j, "o");
                 }else{
                     tabCoo[i][j] = new Noeud(i, j, "n");
@@ -221,34 +221,28 @@ public class Game<boosted> {
             }
         }
 
-        if(!boosted) {
-            if (scatterCompte > 16 && chaseMode) {
-                chaseMode = false;
-                for (int i = 0; i < 4; i++) {
-                    scatter[i] = true;
-                }
-                scatterCompte = 0;
+        if(scatterCompte > 80 && chaseMode)
+        {
+            chaseMode = false;
+            for(int i = 0; i < 4; i++){
+                scatter[i] = true;
             }
-            else if (scatterCompte > 16 && getNiveauActuel() < 8) {
-                chaseMode = true;
-                for (int i = 0; i < 4; i++) {
-                    scatter[i] = false;
-                }
-                scatterCompte = 0;
+            scatterCompte = 0;
+        }
+        if(scatterCompte > 80)
+        {
+            chaseMode = true;
+            for(int i = 0; i < 4; i++){
+                scatter[i] = false;
             }
+            scatterCompte = 0;
         }
 
-        if(!boosted && pacman != null){
-            if(fantomeRouge != null){
-                iaRouge(tabCoo, fantomeRouge, pacman, tabFantome[1]);
-            }
-            if(fantomeB != null && fantomeRouge != null){
-                iaBleu(tabCoo, fantomeB, pacman, tabFantome[2], fantomeRouge);
-            }if(fantomeRose != null){
-                iaRose(tabCoo, fantomeRose, pacman, tabFantome[0]);
-            }if(fantomeV != null){
-                iaVert(tabCoo, fantomeV, pacman, tabFantome[3]);
-            }
+        if(!boosted){
+            iaRouge(tabCoo, fantomeRouge, pacman, tabFantome[1]);
+            iaBleu(tabCoo, fantomeB, pacman, tabFantome[2], fantomeRouge);
+            iaRose(tabCoo, fantomeRose, pacman, tabFantome[0]);
+            iaVert(tabCoo, fantomeV, pacman, tabFantome[3]);
         }
         else{
             iaAleatoire();
@@ -262,14 +256,18 @@ public class Game<boosted> {
         if (direction != null && !direction.equals(Directions.NULL)) {
 
             verif = this.grilleDuJeu.deplacerFantome(direction, fantome);
+            directionsF[ordre] = direction;
             while (!verif) {
-                    Directions directTempo = this.grilleDuJeu.genDir();
-                    verif = this.grilleDuJeu.deplacerFantome(directTempo, fantome);
+                Directions directTempo = this.grilleDuJeu.genDir();
+                verif = this.grilleDuJeu.deplacerFantome(directTempo, fantome);
+                directionsF[ordre] = directTempo;
             }
         } else {
             while (!verif) {
                 Directions directTempo = this.grilleDuJeu.genDir();
                 verif = this.grilleDuJeu.deplacerFantome(directTempo, fantome);
+                directionsF[ordre] = directTempo;
+
             }
 
         }
@@ -290,7 +288,7 @@ public class Game<boosted> {
             if(cheminR != null) {
                 deplacementFApresAStar(cheminR.get(0), mFantome, 1);
             }
-            if(fantome.getX() == scatterRouge[0] && fantome.getY() == scatterRouge[1] || fantome.getX() == scatterRouge[0]+1 && fantome.getY() == scatterRouge[1]|| fantome.getX() == scatterRouge[0] && fantome.getY() == scatterRouge[1]-1){
+            if(fantome.getX() == scatterRouge[0] && fantome.getY() == scatterRouge[1]){
                 scatter[1] = false;
             }
         }
@@ -319,7 +317,7 @@ public class Game<boosted> {
             if(cheminR != null) {
                 deplacementFApresAStar(cheminR.get(0), mFantome, 2);
             }
-            if(fantome.getX() == scatterB[0] && fantome.getY() == scatterB[1]||fantome.getX() == scatterB[0]-1 && fantome.getY() == scatterB[1]||fantome.getX() == scatterB[0] && fantome.getY() == scatterB[1]-1){
+            if(fantome.getX() == scatterB[0] && fantome.getY() == scatterB[1]){
                 scatter[2] = false;
             }
         }
@@ -349,7 +347,7 @@ public class Game<boosted> {
             if(cheminR != null) {
                 deplacementFApresAStar(cheminR.get(0), mFantome, 0);
             }
-            if(fantome.getX() == scatterRose[0] && fantome.getY() == scatterRose[1] ||fantome.getX() == scatterRose[0]+1 && fantome.getY() == scatterRose[1]  ||fantome.getX() == scatterRose[0] && fantome.getY() == scatterRose[1]+1 ){
+            if(fantome.getX() == scatterRose[0] && fantome.getY() == scatterRose[1]){
                 scatter[0] = false;
             }
         }
@@ -373,11 +371,14 @@ public class Game<boosted> {
             if(cheminR != null) {
                 deplacementFApresAStar(cheminR.get(0), mFantome, 3);
             }
-            if(fantome.getX() == scatterV[0] && fantome.getY() == scatterV[1] ||fantome.getX() == scatterV[0]-1 && fantome.getY() == scatterV[1] ||fantome.getX() == scatterV[0] && fantome.getY() == scatterV[1]+1){
+            if(fantome.getX() == scatterV[0] && fantome.getY() == scatterV[1]){
                 scatter[3] = false;
             }
         }
     }
+
+
+
 
     public void iaAleatoire(){
         Objet[] fantomes = grilleDuJeu.getFantomes();
@@ -385,32 +386,32 @@ public class Game<boosted> {
         boolean verif;
         for(int i = 0; i < 4; i++)
         {
-            if(fantomes[i] != null) {
-                n++;
-                if (this.directionsF[i] == Directions.NULL) {
-                    this.directionsF[i] = this.grilleDuJeu.genDir();
+            n++;
+            if(this.directionsF[i] == Directions.NULL)
+            {
+                this.directionsF[i] = this.grilleDuJeu.genDir();
+            }
+            if(n >= 15){
+                n = 0;
+                this.directionsF[i] = this.grilleDuJeu.genDir();
+            }
+            if(this.directionsF[i].equals(Directions.GAUCHE) || this.directionsF[i].equals(Directions.DROITE))
+            {
+                Random random = new Random();
+                int nombreAleatoire = random.nextInt(6);
+                if(nombreAleatoire == 1 || nombreAleatoire == 5){
+                    this.directionsF[i] = Directions.BAS;
                 }
-                if (n >= 15) {
-                    n = 0;
-                    this.directionsF[i] = this.grilleDuJeu.genDir();
+                if(nombreAleatoire == 3){
+                    this.directionsF[i] = Directions.HAUT;
                 }
-                if (this.directionsF[i].equals(Directions.GAUCHE) || this.directionsF[i].equals(Directions.DROITE)) {
-                    Random random = new Random();
-                    int nombreAleatoire = random.nextInt(6);
-                    if (nombreAleatoire == 1 || nombreAleatoire == 5) {
-                        this.directionsF[i] = Directions.BAS;
-                    }
-                    if (nombreAleatoire == 3) {
-                        this.directionsF[i] = Directions.HAUT;
-                    }
-                }
-                while (!(this.grilleDuJeu.contains(fantomes[i].getObjetMobile().getCoordonees()[0] + this.grilleDuJeu.convertDir(directionsF[i])[0], fantomes[i].getObjetMobile().getCoordonees()[1] + this.grilleDuJeu.convertDir(directionsF[i])[1]).isTraversable())) {
-                    this.directionsF[i] = this.grilleDuJeu.genDir();
-                }
-                verif = grilleDuJeu.deplacerFantome(this.directionsF[i], fantomes[i]);
-                if (!verif) {
-                    this.directionsF[i] = Directions.NULL;
-                }
+            }
+            while(!(this.grilleDuJeu.contains(fantomes[i].getObjetMobile().getCoordonees()[0]+this.grilleDuJeu.convertDir(directionsF[i])[0], fantomes[i].getObjetMobile().getCoordonees()[1]+this.grilleDuJeu.convertDir(directionsF[i])[1]).isTraversable())){
+                this.directionsF[i] = this.grilleDuJeu.genDir();
+            }
+            verif = grilleDuJeu.deplacerFantome(this.directionsF[i], fantomes[i]);
+            if(!verif){
+                this.directionsF[i] = Directions.NULL;
             }
         }
     }
@@ -591,7 +592,7 @@ public class Game<boosted> {
                 Le but est d'obtenir le meilleur score.""";
     }
 
-    public Directions[] getDirectionsF() {
+        public Directions[] getDirectionsF() {
         return directionsF;
     }
     public int getNiveauActuel() {
