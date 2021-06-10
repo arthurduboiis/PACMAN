@@ -50,7 +50,6 @@ public class VueJeu extends BorderPane{
     public VueJeu(ControleJeu controleJeu, Game game) {
         this.game = game;
         initGrid();
-        initImages();
     }
     public VueJeu(Game game, Scene scene){
         this.game = game;
@@ -249,6 +248,7 @@ public class VueJeu extends BorderPane{
                 if(game.getGrilleDuJeu().getGrilleJeu()[i][j].getType().equals(typeObjet.PACMAN)){
                     if (activeEE1){
                         nbFrame = 1;
+                        pacmanImg = new Image(Liens.getCheminPacDonald());
                     }
                     imgAnim = new SpriteAnimation(img, pacmanImg, 1, 3, nbFrame, 50, 50, 15);
                     img.setImage(imgAnim.getImageView().getImage());

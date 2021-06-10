@@ -28,6 +28,7 @@ public class ControleBouton implements EventHandler {
     private boolean verif = false;
     //private FinView finView;
     private CommentJouerView commentJouerView;
+    private ControleMenu controleMenu;
 
     private NameView nameView;
 
@@ -35,6 +36,7 @@ public class ControleBouton implements EventHandler {
         this.game = game;
 
         menuView = new MenuView(this,game);
+        controleMenu = new ControleMenu(game,getMenuView());
         recordView = new RecordView(this,game);
         commentJouerView = new CommentJouerView(this,game);
         jeuCompletView = new JeuCompletView(this,game);
@@ -112,8 +114,10 @@ public class ControleBouton implements EventHandler {
 
                         else {
                             this.game = new Game();
+
                             this.jeuCompletView = new JeuCompletView(this,game);
                             jeuCompletView.setVueJeu(this.vueJeu);
+                            this.controleMenu = new ControleMenu(game, new MenuView(this,game));
                             scene = new Scene(jeuCompletView);
                         }
 
@@ -121,6 +125,11 @@ public class ControleBouton implements EventHandler {
 
                         this.vueJeu = new VueJeu(game,scene);
                         vueJeu.setActionRetourMenu(this);
+                        if(game.isPacDonald()){
+                            vueJeu.initEE1Images();
+                        } else{
+                            vueJeu.initImages();
+                        }
                         controleJeu.addControleJeu(scene, getJeuCompletView().getPauseView());
 
                         jeuCompletView.setVueJeu(this.vueJeu);
@@ -138,8 +147,6 @@ public class ControleBouton implements EventHandler {
                         primaryStage.setScene(scene);
                         game.getTimeline().play();
                         audioMenu.pause();
-                        primaryStage.setResizable(false);
-                        primaryStage.sizeToScene();
 
                     }
                 }catch (IOException e){

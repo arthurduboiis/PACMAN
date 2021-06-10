@@ -92,10 +92,10 @@ public class Liens {
     private static String cheminMurEE1 = "file:src/RESSOURCES/IMAGES/EE1/murEE1.png";
     private static String cheminBonbonEE1 = "file:src/RESSOURCES/IMAGES/EE1/bonbonEE1.png";
     private static String cheminGrosBonbonEE1 = "file:src/RESSOURCES/IMAGES/EE1/grosBonbonEE1.png";
+    private static String cheminPacDonald = "file:src/RESSOURCES/IMAGES/Pacman/pacDonald.png";
 
 
-
-    /////////////////////////////////////////////////
+/////////////////////////////////////////////////
 
 
     public static String getCheminCarte1() {
@@ -307,5 +307,9 @@ public class Liens {
 
     public static String getCheminGrosBonbonEE1() {
         return cheminGrosBonbonEE1;
+    }
+
+    public static String getCheminPacDonald() {
+        return cheminPacDonald;
     }
 }

@@ -24,6 +24,11 @@ public class MenuView extends GridPane {
         boutRecord.setOnAction(controleBouton);
         boutCommentJouer.setOnAction(controleBouton);
         boutQuitter.setOnAction(controleBouton);
+
+    }
+
+    public void setOnKey(ControleMenu controleMenu){
+        this.setOnKeyPressed(controleMenu);
     }
 
     public void initGrid(){
@@ -38,16 +43,19 @@ public class MenuView extends GridPane {
         }
 
         boutJouer = new Button("Jouer");
+        boutJouer.setFocusTraversable(false);
         boutJouer.setId("button");
         boutJouer.setStyle("-fx-font: 22 arial; -fx-base: #b6e7c9;");
         GridPane.setHalignment(boutJouer, HPos.CENTER);
 
         boutRecord = new Button("Records");
+        boutRecord.setFocusTraversable(false);
         boutRecord.setId("button");
         boutRecord.setStyle("-fx-font: 22 arial; -fx-base: #b6e7c9;");
         GridPane.setHalignment(boutRecord, HPos.CENTER);
 
         boutCommentJouer = new Button("Comment jouer");
+        boutCommentJouer.setFocusTraversable(false);
         boutCommentJouer.setId("button");
         boutCommentJouer.setStyle("-fx-font: 22 arial; -fx-base: #b6e7c9;");
         GridPane.setHalignment(boutCommentJouer, HPos.CENTER);

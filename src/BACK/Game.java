@@ -35,7 +35,7 @@ public class Game<boosted> {
 
     private int nombreVies;
 
-    private boolean enCours, boosted;
+    private boolean enCours, boosted, pacDonald;
 
     public boolean premierDemarrage = true;
 
@@ -601,6 +601,14 @@ public class Game<boosted> {
     public void setNiveauActuel(int niveauActuel) {
         this.niveauActuel = niveauActuel;
     }
+    public boolean isPacDonald() {
+        return pacDonald;
+    }
+
+    public void setPacDonald(boolean pacDonald) {
+        this.pacDonald = pacDonald;
+    }
+
 
 
 

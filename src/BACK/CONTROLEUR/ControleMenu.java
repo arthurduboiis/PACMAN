@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class ControleMenu{
+public class ControleMenu implements EventHandler<KeyEvent> {
 
 
     private MenuView menuView;
@@ -22,84 +22,82 @@ public class ControleMenu{
     private ArrayList<KeyCode> KC;
 
 
-    public ControleMenu(Game game){
+
+    public ControleMenu(Game game, MenuView menuView){
 
         this.game = game;
-
         this.EE1 = false;
         this.KC = new ArrayList<KeyCode>();
+        this.menuView = menuView;
+        this.menuView.setOnKey(this);
 
     }
+    public void setGame(Game game){
+        this.game = game;
+    }
 
-
-    public void addControleMenu(MenuView menuView){
-
-        System.out.println("Controle menu active");
-
-
-        menuView.setOnKeyPressed(new EventHandler<KeyEvent>()
+    @Override
+    public void handle(KeyEvent keyEvent) {
+        KeyCode source = (KeyCode) keyEvent.getCode();
+        System.out.println(source.getChar());
+        if(source== KeyCode.M)
         {
-            @Override
-            public void handle(KeyEvent event)
-            {
-                if(event.getCode() == KeyCode.M)
-                {
-                    System.out.println("M appuyé");
+            System.out.println("M");
 
-                    if (EE1){
-                        EE1 = false;
-                        game.getVueJeu().initImages();
-                    }else{
-                        EE1 = true;
-                        game.getVueJeu().initEE1Images();
-                    }
-
-
-                }else if (event.getCode() == KeyCode.A) {
-                    System.out.println("A appuyé");
-                    KC.add(event.getCode());
-                    tryKC();
-                }
-                else if (event.getCode() == KeyCode.B) {
-                    System.out.println("B appuyé");
-                    KC.add(event.getCode());
-                    tryKC();
-                }
-                else if(event.getCode() == KeyCode.UP)
-                {
-                    System.out.println("Flèche haut appuyée");
-                    KC.add(event.getCode());
-                    tryKC();
-                }
-                //goes down
-                else if(event.getCode() == KeyCode.DOWN)
-                {
-                    System.out.println("Flèche bas appuyée");
-                    KC.add(event.getCode());
-                    tryKC();
-
-
-                }
-                // goes right
-                else if(event.getCode() == KeyCode.RIGHT)
-                {
-                    System.out.println("Flèche droite appuyée");
-                    KC.add(event.getCode());
-                    tryKC();
-
-
-                }
-                // goes left
-                else if(event.getCode() == KeyCode.LEFT)
-                {
-                    System.out.println("Flèche gauche appuyée");
-                    KC.add(event.getCode());
-                    tryKC();
-
-                }
+            if (EE1){
+                System.out.println("je desactive");
+                EE1 = false;
+                this.game.setPacDonald(false);
+            }else{
+                System.out.println("J'active");
+                EE1 = true;
+                this.game.setPacDonald(true);
             }
-        });
 
+
+        }
+        if (source == KeyCode.Q) {
+            System.out.println("A appuyé");
+            KC.add(source);
+            tryKC();
+        }
+        if (source == KeyCode.B) {
+            System.out.println("B appuyé");
+            KC.add(source);
+            tryKC();
+        }
+        if(source == KeyCode.UP)
+        {
+            System.out.println("Flèche haut appuyée");
+            KC.add(source);
+            tryKC();
+        }
+        //goes down
+        if(source== KeyCode.DOWN)
+        {
+            System.out.println("Flèche bas appuyée");
+            KC.add(source);
+            tryKC();
+
+
+        }
+        // goes right
+        if(source == KeyCode.RIGHT)
+        {
+            System.out.println("Flèche droite appuyée");
+            KC.add(source);
+            tryKC();
+
+
+        }
+        // goes left
+        if(source == KeyCode.LEFT)
+        {
+            System.out.println("Flèche gauche appuyée");
+            KC.add(source);
+            tryKC();
+
+        }
     }
 
 
@@ -122,7 +120,6 @@ public class ControleMenu{
 
 
     }
-
 
 
 

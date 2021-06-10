@@ -50,6 +50,7 @@ public class Grille {
         try {
             initGrille();
         } catch (IOException e) {
+            System.out.println("Erreur à l'initialisation de la grille");
         }
     }
 
@@ -93,104 +94,103 @@ public class Grille {
 
 
 
-            if (ch != '\r') {
-                if(ch != '\n') {
-                    tab[x][y] = ch;
-                    switch (ch) {
-                        case '0':
+            if (ch != '\n') {
 
-                            toAddFix = new ObjetDecors(typeObjet.PETIT_BONBON);
-                            convert = toAddFix;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            this.nbBonbons += 1;
-                            break;
+                tab[x][y] = ch;
+                switch (ch) {
+                    case '0':
 
-                        case '1':
-                            toAddFix = new ObjetDecors(typeObjet.MUR);
-                            convert = toAddFix;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            break;
-                        case '2':
-                            toAddMob = new ObjetMobile(typeObjet.PACMAN, x, y);
-                            convert = toAddMob;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            this.PacMan = toAddMob;
-                            break;
-                        case '3':
-                            toAddMob = new ObjetMobile(typeObjet.FANTOME_ROSE, x, y);
-                            convert = toAddMob;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            this.fantomes[0] = toAddMob;
-                            break;
-                        case '4':
-                            toAddMob = new ObjetMobile(typeObjet.FANTOME_ROUGE, x, y);
-                            convert = toAddMob;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            this.fantomes[1] = toAddMob;
-                            break;
-                        case '5':
-                            toAddMob = new ObjetMobile(typeObjet.FANTOME_BLEU, x, y);
-                            convert = toAddMob;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            this.fantomes[2] = toAddMob;
-                            break;
-                        case '6':
-                            toAddMob = new ObjetMobile(typeObjet.FANTOME_VERT, x, y);
-                            convert = toAddMob;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            this.fantomes[3] = toAddMob;
-                            break;
-                        case '7':
-                            toAddFix = new ObjetDecors(typeObjet.PORTE);
-                            convert = toAddFix;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            break;
-                        case '8':
-                            toAddFix = new ObjetDecors(typeObjet.GROS_BONBON);
-                            convert = toAddFix;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            this.nbBonbons += 1;
-                            break;
-                        case '9':
-                            toAddFix = new ObjetDecors(typeObjet.VIDE);
-                            convert = toAddFix;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            break;
-                        case 'T':
-                            toAddFix = new ObjetDecors(typeObjet.TELEPORT);
-                            convert = toAddFix;
-                            toReturnFix[x][y] = toAddFix;
-                            toReturnMob[x][y] = toAddMob;
-                            toReturn[x][y] = convert;
-                            break;
+                        toAddFix = new ObjetDecors(typeObjet.PETIT_BONBON);
+                        convert = toAddFix;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        this.nbBonbons+=1;
+                        break;
+
+                    case '1':
+                        toAddFix = new ObjetDecors(typeObjet.MUR);
+                        convert = toAddFix;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        break;
+                    case '2':
+                        toAddMob = new ObjetMobile(typeObjet.PACMAN,x,y);
+                        convert = toAddMob;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        this.PacMan = toAddMob;
+                        break;
+                    case '3':
+                        toAddMob = new ObjetMobile(typeObjet.FANTOME_ROSE,x,y);
+                        convert = toAddMob;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        this.fantomes[0] = toAddMob;
+                        break;
+                    case '4':
+                        toAddMob = new ObjetMobile(typeObjet.FANTOME_ROUGE,x,y);
+                        convert = toAddMob;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        this.fantomes[1] = toAddMob;
+                        break;
+                    case '5':
+                        toAddMob = new ObjetMobile(typeObjet.FANTOME_BLEU,x,y);
+                        convert = toAddMob;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        this.fantomes[2] = toAddMob;
+                        break;
+                    case '6':
+                        toAddMob = new ObjetMobile(typeObjet.FANTOME_VERT,x,y);
+                        convert = toAddMob;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        this.fantomes[3] = toAddMob;
+                        break;
+                    case '7':
+                        toAddFix = new ObjetDecors(typeObjet.PORTE);
+                        convert = toAddFix;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        break;
+                    case '8':
+                        toAddFix = new ObjetDecors(typeObjet.GROS_BONBON);
+                        convert = toAddFix;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        this.nbBonbons+=1;
+                        break;
+                    case '9':
+                        toAddFix = new ObjetDecors(typeObjet.VIDE);
+                        convert = toAddFix;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        break;
+                    case 'T':
+                        toAddFix = new ObjetDecors(typeObjet.TELEPORT);
+                        convert = toAddFix;
+                        toReturnFix[x][y] = toAddFix;
+                        toReturnMob[x][y] = toAddMob;
+                        toReturn[x][y] = convert;
+                        break;
 
 
-                        default:
-                    }
-
-                    //toReturn[x][y] = convert;
-                    y += 1;
+                    default:
+                        System.out.println("ERREUR INITIALISATION"+ x+ " "+ y);
                 }
+                //toReturn[x][y] = convert;
+                y+=1;
             }else{
                 y=0;
                 x+=1;
