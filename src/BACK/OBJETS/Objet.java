@@ -79,6 +79,41 @@ public class Objet {
                 this.isTraversable = true;
                 break;
             }
+            case CERISE -> {
+                this.image = Liens.getCheminCerise();
+                this.isTraversable = true;
+                break;
+            }
+            case FRAISE -> {
+                this.image = Liens.getCheminFraise();
+                this.isTraversable = true;
+                break;
+            }
+            case RAISIN -> {
+                this.image = Liens.getCheminRaisin();
+                this.isTraversable = true;
+                break;
+            }
+            case POMME -> {
+                this.image = Liens.getCheminPomme();
+                this.isTraversable = true;
+                break;
+            }
+            case ORANGE -> {
+                this.image = Liens.getCheminOrange();
+                this.isTraversable = true;
+                break;
+            }
+            case BANANE-> {
+                this.image = Liens.getCheminBanane();
+                this.isTraversable = true;
+                break;
+            }
+            case POIRE -> {
+                this.image = Liens.getCheminPoire();
+                this.isTraversable = true;
+                break;
+            }
             default ->
                     System.out.println("Erreur Initialisation Objet " + this.type);
         }

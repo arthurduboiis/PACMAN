@@ -647,7 +647,7 @@ public class Grille {
 
         typeObjet typeToPop = null;
 
-        if ((nbBonbonsManges < (nbBonbons / 2) && fruitPop == false)){ //TODO: changer ici
+        if ((nbBonbonsManges > (nbBonbons / 2) && fruitPop == false)){
             this.fruitPop = true;
 
             switch(niveauActuel){
