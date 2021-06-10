@@ -32,6 +32,9 @@ public class CommentJouerView extends GridPane {
         retourMenu.setOnAction(controleBouton);
     }
 
+    /**
+     * initialise la Grid
+     */
     public void initGrid(){
         this.setId("pane");
 
@@ -93,6 +96,9 @@ public class CommentJouerView extends GridPane {
 
     }
 
+    /**
+     * initialise les images touches
+     */
     public void initImagesTouches() {
         imagesTouches = new Image[3];
         imagesTouches[0] = new Image(Liens.getCheminFleches());
@@ -100,6 +106,9 @@ public class CommentJouerView extends GridPane {
         imagesTouches[2] = new Image(Liens.getCheminSpace());
     }
 
+    /**
+     * initialise les imges touches view
+     */
     public void initImagesTouchesViewResized() {
         imageTouchesResized= new ImageView[3];
         for(int i = 0; i<3; i++) {
@@ -112,6 +121,10 @@ public class CommentJouerView extends GridPane {
 
     }
 
+    /**
+     * renvoie le bouton retourMenu
+     * @return Button
+     */
     public Button getRetourMenu() {
         return retourMenu;
     }
